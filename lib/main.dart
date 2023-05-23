@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.blue,
             ),
             home: snapshot.data == null
-                ? const LoginPage()
+                ? const HomePage()
                 : TransitionChauffeurVehicule(applicationUser: snapshot.data!),
           );
         });

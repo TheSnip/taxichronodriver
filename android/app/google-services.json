@@ -1,24 +1,25 @@
 {
   "project_info": {
     "project_number": "388406613111",
+    "firebase_url": "https://taxischrono-c12c9-default-rtdb.firebaseio.com",
     "project_id": "taxischrono-c12c9",
     "storage_bucket": "taxischrono-c12c9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:388406613111:android:3104c566d967dbf662a272",
+        "mobilesdk_app_id": "1:388406613111:android:2982495cf4dc121462a272",
         "android_client_info": {
-          "package_name": "com.incc.taxischrono.app"
+          "package_name": "com.incc.taxischronodriver"
         }
       },
       "oauth_client": [
         {
-          "client_id": "388406613111-4ama9814rmq80k2ikfg1is3dl8pqd4sa.apps.googleusercontent.com",
+          "client_id": "388406613111-phlc1ta9l1ku6f8kaekcq50qo1jdsk6p.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.incc.taxischrono.app",
-            "certificate_hash": "49e2f21cf070a1eab8fcf866a4978273a2a2ab27"
+            "package_name": "com.incc.taxischronodriver",
+            "certificate_hash": "6f402d6046c842b16a5a14d1d64d3ada36f7fd77"
           }
         },
         {
@@ -51,12 +52,20 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:388406613111:android:2982495cf4dc121462a272",
+        "mobilesdk_app_id": "1:388406613111:android:5ad00b921efb41ff62a272",
         "android_client_info": {
-          "package_name": "com.incc.taxischronodriver"
+          "package_name": "com.taxichrono.app"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "388406613111-dr4fhgd69da4vnr6cdr9bm4up0t64u7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taxichrono.app",
+            "certificate_hash": "24c0b36ba478223171a4e5e9fea8a1779eecdebf"
+          }
+        },
         {
           "client_id": "388406613111-uj399lmf6itidrebtv6krolrcip6aaev.apps.googleusercontent.com",
           "client_type": 3

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:taxischronodriver/modeles/autres/vehicule.dart';
 import 'package:taxischronodriver/screens/delayed_animation.dart';
 import 'package:taxischronodriver/varibles/variables.dart';
@@ -78,34 +79,7 @@ class _RequestCarState extends State<RequestCar> {
               const SizedBox(height: 35),
               signupForm(),
               const SizedBox(height: 35),
-              SizedBox(
-                width: double.infinity,
-                child: DelayedAnimation(
-                  delay: 5500,
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          elevation: 1,
-                          shape: const StadiumBorder(),
-                          backgroundColor: dredColor,
-                          padding: const EdgeInsets.symmetric(
-                            // horizontal: 125,
-                            vertical: 12,
-                          ),
-                        ),
-                        child: Text(
-                          'ENREGISTRER',
-                          style: GoogleFonts.poppins(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 4),
-                        ),
-                        onPressed: () {}),
-                  ),
-                ),
-              ),
+              
               spacerHeight(15),
             ],
           ),
@@ -124,6 +98,8 @@ class _RequestCarState extends State<RequestCar> {
         chauffeurId: authentication.currentUser!.uid,
         statut: false,
       );
+      print("object");
+      print(vehicule);
     }
   }
 
@@ -140,7 +116,7 @@ class _RequestCarState extends State<RequestCar> {
               validator: (value) {
                 return value != null || (value!.trim().isNotEmpty)
                     ? value.length < 4
-                        ? "entrer un numéro de chassie valide"
+                        ? "Entrer un numéro de chassie valide"
                         : null
                     : 'veillez entrer un numéro de chassie';
               },
@@ -234,7 +210,7 @@ class _RequestCarState extends State<RequestCar> {
                     ? value.length < 3
                         ? "entrer une couleur valide"
                         : null
-                    : 'veillez entrer un numéro de chassie';
+                    : 'veillez entrer la couleur de votre vehicule';
               },
               style: police,
               decoration: InputDecoration(
@@ -247,6 +223,53 @@ class _RequestCarState extends State<RequestCar> {
               ),
             ),
           ),
+          SizedBox(
+                width: double.infinity,
+                child: DelayedAnimation(
+                  delay: 5500,
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 1,
+                          shape: const StadiumBorder(),
+                          backgroundColor: dredColor,
+                          padding: const EdgeInsets.symmetric(
+                            // horizontal: 125,
+                            vertical: 12,
+                          ),
+                        ),
+                        child: Text(
+                          'ENREGISTRER',
+                          style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 4),
+                        ),
+                        onPressed: () async {
+                          print(1);
+                          print(controllerChassie.text);
+                          String assurance=controllerChassie.text;
+                          DateTime FinAssurance=endAssurance!;
+                          String imat=controllerimat.text;
+                          String chassie1=controllerChassie.text;
+                          String usr=authentication.currentUser!.uid;
+                          bool Statut1=false;
+                            Map<String,dynamic> vehicule={
+                              "assurance": controllerassurance.text,
+                              "expirationAssurance": endAssurance!,
+                              "imatriculation": controllerimat.text,
+                              "numeroDeChassie": controllerChassie.text,
+                              "chauffeurId": authentication.currentUser!.uid,
+                              "statut": false,
+                           };
+                           print(2);
+                           print(vehicule);
+                        }),
+                  ),
+                ),
+              ),
         ],
       ),
     );
